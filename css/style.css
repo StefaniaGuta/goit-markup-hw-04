@@ -20,7 +20,6 @@
     border-bottom: 1px solid #ececec;
     display: flex;
     align-items: baseline;
-    flex-shrink: 0;
 }
 
 .header{
@@ -31,7 +30,7 @@
 }
 
 .logo-header{
-    padding: 24px 0 25px 215px;
+    padding: 24px 0 0 215px;
     margin-right: 93px;
 }
 
@@ -47,7 +46,25 @@
 
 .navigation a{
     color: var(--nav-color);
-    margin-inline-end: 50px;
+    position: relative;
+}
+
+.navigation a:not(:last-child){
+    margin-right: 50px;
+}
+
+
+.navigation a:hover::after{
+    content: '';
+    width: 100%;
+    height: 4px;
+    flex-shrink: 0;
+    border-radius: 2px;
+    background: #2196F3;
+    position: absolute;
+    opacity: 1px;
+    left: 0;
+    top: 47px;
 }
 
 .navigation{
@@ -71,6 +88,10 @@
     margin-right: 215px;
 }
 
+.email-contact-section:not(:last-child){
+    margin-right: 40px;
+}
+
 .icon-mail svg{
     width: 16px;
     height: 11.996px;
@@ -78,11 +99,13 @@
     margin-right: 10px;
 }
 
-.icon-mail{
+.icon-mail,
+.icon-phone{
     display: flex;
     justify-content: center;
     align-items: center;
     cursor: pointer;
+    fill:#afb1b8;
 }
 
 .icon-phone svg{
@@ -90,13 +113,6 @@
     height: 16px;
     flex-shrink: 0;
     margin-right: 10px;
-}
-
-.icon-phone{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
 }
 
 .email-contact-section .icon-mail:hover a,
@@ -108,11 +124,7 @@
 .email-contact-section .icon-mail:focus a,
 .email-contact-section .icon-mail:focus svg{
     color: var(--diff-color);
-    stroke: var(--diff-color);
-}
-
-.email-contact{
-    margin-right: 40px;
+    fill: var(--diff-color);
 }
 
 /*Studio page*/
@@ -347,12 +359,14 @@
     border-radius: 44px;
     padding: 12px;
     box-shadow: none;
+    fill:#afb1b8; 
 }
 
 .class-our-team .social-media-ourteam .icon-our-team:hover,
 .class-our-team .social-media-ourteam .icon-our-team:focus{
     background-color: var(--diff-color);
     fill: #FFFFFF;
+    cursor: pointer;
 }
 
 .customers-container{
@@ -396,6 +410,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    fill:#afb1b8; 
 }    
 
 .customers-container li:not(:last-child){
@@ -413,11 +428,6 @@
     border: 1px solid var(--diff-color);
     cursor: pointer;
     fill:#2196F3;
-   
-}
-
-a:hover{
-    fill: #2196F3;
 }
 
 /*Portofolio page*/
